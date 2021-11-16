@@ -299,7 +299,7 @@ html {
 }
 html,
 body {
-  font-family: myfont;
+  font-family: qingcong;
 }
 html,
 body,
@@ -891,7 +891,7 @@ img[lazyload] {
 .markdown-body {
   font-size: 1rem;
   line-height: 1.6;
-  font-family: myfont;
+  font-family: qingcong;
   margin-bottom: 2rem;
   color: var(--post-text-color);
 }
