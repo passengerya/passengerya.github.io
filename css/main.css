@@ -354,7 +354,7 @@ img[lazyload] {
   --post-link-color: #0366d6;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
-  --navbar-bg-color: #2f4154;
+  --navbar-bg-color: #0066ff;
   --navbar-text-color: #fff;
 }
 @media (prefers-color-scheme: dark) {
@@ -913,7 +913,7 @@ img[lazyload] {
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: rgba(47,65,84,0.7);
+    background: rgba(0,102,255,0.7);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
@@ -922,7 +922,7 @@ img[lazyload] {
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: #2f4154;
+    background: #06f;
   }
 }
 @media (max-width: 767px) {
@@ -1273,10 +1273,10 @@ a.fancybox:hover {
 }
 #nprogress .bar {
   height: 3px !important;
-  background-color: #29d !important;
+  background-color: #0066ff !important;
 }
 #nprogress .peg {
-  box-shadow: 0 0 14px #29d, 0 0 8px #29d !important;
+  box-shadow: 0 0 14px #0066ff, 0 0 8px #0066ff !important;
 }
 @media (max-width: 575px) {
   #nprogress .bar {
