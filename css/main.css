@@ -354,7 +354,7 @@ img[lazyload] {
   --post-link-color: #0366d6;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
-  --navbar-bg-color: #5CB8A7;
+  --navbar-bg-color: #666666;
   --navbar-text-color: #fff;
 }
 @media (prefers-color-scheme: dark) {
@@ -913,7 +913,7 @@ img[lazyload] {
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: rgba(92,184,167,0.7);
+    background: rgba(102,102,102,0.7);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
@@ -922,7 +922,7 @@ img[lazyload] {
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: #5cb8a7;
+    background: #666;
   }
 }
 @media (max-width: 767px) {
