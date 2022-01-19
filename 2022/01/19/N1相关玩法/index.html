@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20211116/passenger.3v7mxk3tbwu0.jpg">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20211116/passenger.3v7mxk3tbwu0.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#019db6">
+  <meta name="description" content="">
+  <meta name="author" content="passenger">
+  <meta name="keywords" content="">
+  <meta name="description" content="N1相关玩法一、刷webpad电视系统 第一步：用USB双工头线一端连接电脑，另一头连接靠近HDMI的USB孔（最内侧的USB孔） 第二步：用USB_Burning_Tool工具导入webpad的烧录包，导入完成后，取消擦除flash、取消擦除bootloader的选项 第三步：先点击USB_Burning_Tool工具的开始按钮，尽可能快的开始插上N1的电源，然后看到USB_Burning_To">
+<meta property="og:type" content="article">
+<meta property="og:title" content="N1相关玩法">
+<meta property="og:url" content="http://example.com/2022/01/19/N1%E7%9B%B8%E5%85%B3%E7%8E%A9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Passenger Blog">
+<meta property="og:description" content="N1相关玩法一、刷webpad电视系统 第一步：用USB双工头线一端连接电脑，另一头连接靠近HDMI的USB孔（最内侧的USB孔） 第二步：用USB_Burning_Tool工具导入webpad的烧录包，导入完成后，取消擦除flash、取消擦除bootloader的选项 第三步：先点击USB_Burning_Tool工具的开始按钮，尽可能快的开始插上N1的电源，然后看到USB_Burning_To">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-19T03:50:08.000Z">
+<meta property="article:modified_time" content="2022-01-19T04:42:54.202Z">
+<meta property="article:author" content="passenger">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>N1相关玩法 - Passenger Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2934631_6b6jpna2xp9.css">
+<link rel="stylesheet" href="/css/myfont.css">
+<link rel="stylesheet" href="/css/backgroundize.css">
+<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#0066ff","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Passenger</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="N1相关玩法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-19 11:50" pubdate>
+        2022年1月19日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">N1相关玩法</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年1月19日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="N1相关玩法"><a href="#N1相关玩法" class="headerlink" title="N1相关玩法"></a><center>N1相关玩法</center></h1><h2 id="一、刷webpad电视系统"><a href="#一、刷webpad电视系统" class="headerlink" title="一、刷webpad电视系统"></a>一、刷webpad电视系统</h2><ul>
+<li>第一步：用<strong>USB双工头线</strong>一端连接电脑，另一头连接靠近HDMI的USB孔（最内侧的USB孔）</li>
+<li>第二步：用<strong>USB_Burning_Tool</strong>工具导入webpad的烧录包，导入完成后，<strong>取消擦除flash</strong>、<strong>取消擦除bootloader</strong>的选项</li>
+<li>第三步：<strong>先</strong>点击USB_Burning_Tool工具的<strong>开始按钮</strong>，<strong>尽可能快</strong>的开始<strong>插上</strong>N1的<strong>电源</strong>，然后看到USB_Burning_Tool的中进度条开始跑了</li>
+<li>第四步：当USB_Burning_Tool进度条，显示为100%的绿色，<strong>先点击停止</strong>，<strong>再拔掉USB双工头线的连接</strong>，<strong>最后拔掉电源</strong>，到这里webpad电视系统就算导入完成了</li>
+</ul>
+<h2 id="二、刷openwrt系统"><a href="#二、刷openwrt系统" class="headerlink" title="二、刷openwrt系统"></a>二、刷openwrt系统</h2><ul>
+<li>第一步：用U盘写入openwrt镜像（F大的固件），将U盘插入N1（靠近HDMI的USB孔；最内侧的USB孔）</li>
+<li>第二步：<strong>制作U盘启动</strong>，将N1插上电源，接通网线，在路由器获取N1的后台地址，再用N1U盘启动工具，在命令框中输入N1后台地址，后回车，等待命令框的N1U盘启动完成，命令框中会提示盒子已经重启，即完成，这样<strong>即可以双系统，openwrt系统为U盘启动</strong></li>
+<li>第三步：<strong>将openwrt刷入emmc（N1的硬盘）</strong>将U盘刷入N1的硬盘这里使用的F大的固件，所以后台地址为192.168.1.1，wifi名称为斐讯N1等字样，所有的密码为password；进入后台，输入ls，再输入./ins,后按TAB键自动补全命令，回车；之后按照提示选择自定义选项</li>
+</ul>
+<h2 id="三、刷入armbian系统（Ubuntu系统）"><a href="#三、刷入armbian系统（Ubuntu系统）" class="headerlink" title="三、刷入armbian系统（Ubuntu系统）"></a>三、刷入armbian系统（Ubuntu系统）</h2><p>第一步：在U盘中写入armbian系统（版本为<strong>Armbian_5.77_Aml-s905_Ubuntu_bionic_default_5.0.2_20190401.img</strong>），后将制作好的U盘插入N1（靠近HDMI的USB孔；最内侧的USB孔）</p>
+<blockquote>
+<p>制作好后，打开U盘进行一些修改，打开uEnv.int文件，将第一行dtb的文件修改一下名称，修改为meson-gxl-s905d-phicomm-n1-xiangsm，在将meson-gxl-s905d-phicomm-n1-xiangsm.dtb文件导入dtb文件夹中，至此，写入镜像这一步完结</p>
+</blockquote>
+<p>第二步：将N1插上电源，接通网线，在路由器获取N1的后台地址</p>
+<p>第三步：<strong>制作U盘启动</strong>，使用别人分享的N1降级工具中onekey文件夹，在文件夹中打开windows命令行，输入N1的后台地址（后台设备名称显示为aml）192.168.xx.xx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs adb">.\adb.exe connect 192.168.xx.xx<br>.\adb.exe shell reboot update<br></code></pre></td></tr></table></figure>
+
+<p>第四步：<strong>arm刷入emmc（N1的硬盘），</strong>等待重启，进入后台输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs adb">nand-sata-install<br></code></pre></td></tr></table></figure>
+
+<p>第五步：创建宝塔面板，地址为：ip:8888</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment">#防止执行U盘中install.sh刷入eMMC</span><br>mv <span class="hljs-keyword">install</span>.sh <span class="hljs-keyword">install</span>.sh.bak<br><span class="hljs-comment">#安装</span><br>wget -O <span class="hljs-keyword">install</span>.sh http://download.bt.cn/<span class="hljs-keyword">install</span>/<span class="hljs-keyword">install</span>-ubuntu.sh &amp;&amp; bash <span class="hljs-keyword">install</span>.sh<br></code></pre></td></tr></table></figure>
+
+<p>第六步：安装docker：在宝塔面板软件管理，安装docker</p>
+<p>第七步：创建青龙面板，地址为ip:5700，并拉取脚本，设置定时规则，安装依赖</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># 拉取青龙面板最新镜像</span><br>docker pull whyour/qinglong:latest<br><span class="hljs-comment"># 创建容器</span><br>docker run -dit \<br>  --name ql \<br>  --hostname ql \<br>  --restart always \<br>  -p <span class="hljs-number">5700</span>:<span class="hljs-number">5700</span> \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>config:<span class="hljs-regexp">/ql/</span>config \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>log:<span class="hljs-regexp">/ql/</span>log \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>db:<span class="hljs-regexp">/ql/</span>db \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>scripts:<span class="hljs-regexp">/ql/</span>scripts \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>jbot:<span class="hljs-regexp">/ql/</span>jbot \<br>  whyour/qinglong:latest<br> <span class="hljs-comment"># 拉取京东脚本</span><br> <span class="hljs-comment"># facker2的脚本仓库</span><br> ql repo https:<span class="hljs-regexp">//g</span>hproxy.com<span class="hljs-regexp">/https:/</span><span class="hljs-regexp">/github.com/</span>shufflewzc/faker2.git <span class="hljs-string">&quot;jd_|jx_|gua_|jddj_|getJDCookie&quot;</span> <span class="hljs-string">&quot;activity|backUp&quot;</span> <span class="hljs-string">&quot;^jd[^_]|USER|ZooFaker_Necklace.js|JDJRValidator_Pure|sign_graphics_validate&quot;</span><br><span class="hljs-comment"># 别人推荐，反正facker2中有去重脚本，防止重复</span><br>ql repo  https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/yuannian1112/</span>jd_scripts.git  <span class="hljs-string">&quot;jd_|jx_|getJDCookie&quot;</span> <span class="hljs-string">&quot;activity|backUp&quot;</span> <span class="hljs-string">&quot;^jd[^_]|USER|utils&quot;</span><br><span class="hljs-comment"># 定时规则设为</span><br><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> * *<br><br><span class="hljs-comment"># 最后不要忘记安装脚本依赖</span><br>NodeJs下<br> <br>crypto-js  <br>prettytable<br>dotenv  <br>jsdom<br>date-fns  <br>tough-cookie  <br>tslib<br>ws@<span class="hljs-number">7.4</span>.<span class="hljs-number">3</span>  <br>ts-md5  <br>jsdom -g  <br>jieba  <br>fs<br>form-data  <br>json5  <br>global-agent  <br>png-js  <br>@types/node  <br>require<br>typescript  <br>js-base64  <br>axios  <br><br>Python3下<br> <br>requests<br>canvas  <br>ping3<br>jieba<br> <br> <br>Linux下<br> <br>bizCode<br>bizMsg  <br>lxml<br><br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/16/openwrt-old%20compilation%20for%20srun/">
+                        <span class="hidden-mobile">openwrt玩法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://bolg-comment-4gomau1da-passengerya.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <i class="iconfont icon-user"></i> <a href="passengerya.github.io" target="_blank" rel="nofollow noopener"><span>Passenger Blog</span></a>
+
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/scripts/injector.js"></script>
+<script src="/js/backgroundize.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/styles/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>
