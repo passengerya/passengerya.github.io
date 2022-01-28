@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20211116/passenger.3v7mxk3tbwu0.jpg">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20211116/passenger.3v7mxk3tbwu0.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#019db6">
+  <meta name="description" content="">
+  <meta name="author" content="passenger">
+  <meta name="keywords" content="">
+  <meta name="description" content="N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人一、刷入armbin固件到emmc（F大）F大固件地址 刷入步骤： ①制作armbian启动盘：找打N1对应的armbain固件，将固件用USB ime Tool写入U盘  ②N1 U盘启动armbian：将网线插入N1盒子，插入U盘，在路由器N1的ip地址，并在文件夹斐讯T1、N1官方系统降级工具\onekey\da">
+<meta property="og:type" content="article">
+<meta property="og:title" content="N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人">
+<meta property="og:url" content="http://example.com/2022/01/28/N1%E7%9B%92%E5%AD%90-docker-%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF-xdd-plus%E6%9C%BA%E5%99%A8%E4%BA%BA/index.html">
+<meta property="og:site_name" content="Passenger Blog">
+<meta property="og:description" content="N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人一、刷入armbin固件到emmc（F大）F大固件地址 刷入步骤： ①制作armbian启动盘：找打N1对应的armbain固件，将固件用USB ime Tool写入U盘  ②N1 U盘启动armbian：将网线插入N1盒子，插入U盘，在路由器N1的ip地址，并在文件夹斐讯T1、N1官方系统降级工具\onekey\da">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220128/添加应用.53qc30plbxo0.webp">
+<meta property="article:published_time" content="2022-01-28T08:31:19.000Z">
+<meta property="article:modified_time" content="2022-01-28T10:05:39.492Z">
+<meta property="article:author" content="passenger">
+<meta property="article:tag" content="软路由">
+<meta property="article:tag" content="Openwrt">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220128/添加应用.53qc30plbxo0.webp">
+  
+  <title>N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人 - Passenger Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2934631_6b6jpna2xp9.css">
+<link rel="stylesheet" href="/css/myfont.css">
+<link rel="stylesheet" href="/css/backgroundize.css">
+<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#0066ff","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Passenger</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220119/斐讯N1.4cw7g2meq2s0.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-28 16:31" pubdate>
+        2022年1月28日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      7.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年1月28日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="N1盒子-armbian-F大-docker-青龙面板-xdd-plus机器人"><a href="#N1盒子-armbian-F大-docker-青龙面板-xdd-plus机器人" class="headerlink" title="N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人"></a>N1盒子-armbian(F大)-docker-青龙面板-xdd_plus机器人</h1><h2 id="一、刷入armbin固件到emmc（F大）"><a href="#一、刷入armbin固件到emmc（F大）" class="headerlink" title="一、刷入armbin固件到emmc（F大）"></a>一、刷入armbin固件到emmc（F大）</h2><p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1kbvtyxpcmniLKN_ziH-kqQ">F大固件地址</a></p>
+<p><strong>刷入步骤：</strong></p>
+<P style="text-indent:2em;">①制作armbian启动盘：找打N1对应的armbain固件，将固件用USB ime Tool写入U盘</P>
+
+<P style="text-indent:2em;">②N1 U盘启动armbian：将网线插入N1盒子，插入U盘，在路由器N1的ip地址，并在文件夹斐讯T1、N1官方系统降级工具\onekey\data下运行如下代码，重新启动一下</P>
+
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">.\adb<span class="hljs-selector-class">.exe</span> connect <span class="hljs-number">192.168</span><span class="hljs-selector-class">.xx</span><span class="hljs-selector-class">.xx</span><br>.\adb<span class="hljs-selector-class">.exe</span> shell reboot update<br></code></pre></td></tr></table></figure>
+
+<P style="text-indent:2em;">③刷入内置emmc：运行以下代码,后根据提示运行，运行完毕后重启</P>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">./install-<span class="hljs-keyword">to</span>-emmc.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
+
+<P style="text-indent:2em;">④初始设置armbian：根据提示设置密码，到了设置用户名这块，ctrl+c，保留原始root用户名</P>
+
+<P style="text-indent:2em;">⑤到此armbian刷入完成</P>
+
+<h2 id="二、安装docker及portainer-docker容器管理ui界面"><a href="#二、安装docker及portainer-docker容器管理ui界面" class="headerlink" title="二、安装docker及portainer(docker容器管理ui界面)"></a>二、安装docker及portainer(docker容器管理ui界面)</h2><p>①安装docker</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">./<span class="hljs-keyword">install</span>-docker.sh<br></code></pre></td></tr></table></figure>
+
+<p>②安装portainer，一键命令，后将portainer汉化文件放入/opt/docker/protainer，替换其中的public</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">docker run -d -p <span class="hljs-number">9000</span>:<span class="hljs-number">9000</span> --restart=always  -v <span class="hljs-regexp">/var/</span>run<span class="hljs-regexp">/docker.sock:/</span>var<span class="hljs-regexp">/run/</span>docker.sock -v <span class="hljs-regexp">/opt/</span>docker<span class="hljs-regexp">/protainer/</span>portainer_data:<span class="hljs-regexp">/data -v /</span>opt<span class="hljs-regexp">/docker/</span>protainer<span class="hljs-regexp">/public:/</span><span class="hljs-keyword">public</span> -e TZ=Asia<span class="hljs-regexp">/Shanghai --name portainer  portainer/</span>portainer:latest<br></code></pre></td></tr></table></figure>
+
+<h2 id="三、拉取青龙面板"><a href="#三、拉取青龙面板" class="headerlink" title="三、拉取青龙面板"></a>三、拉取青龙面板</h2><p>①拉取青龙镜像</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">docker</span> pull whyour/qinglong:latest<br></code></pre></td></tr></table></figure>
+
+<p>②等待下载完成之后，输入一下代码，创建容器，直接全部复制，终端粘贴</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run -dit \<br>  --name ql \<br>  --hostname ql \<br>  --restart always \<br>  -p <span class="hljs-number">5700</span>:<span class="hljs-number">5700</span> \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>config:<span class="hljs-regexp">/ql/</span>config \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>log:<span class="hljs-regexp">/ql/</span>log \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>db:<span class="hljs-regexp">/ql/</span>db \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>scripts:<span class="hljs-regexp">/ql/</span>scripts \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>jbot:<span class="hljs-regexp">/ql/</span>jbot \<br>  whyour/qinglong:latest<br></code></pre></td></tr></table></figure>
+
+<p>开放的端口为：ip：5700 </p>
+<p>③为后面xdd提供应用的值client id，client secret，所以创建应用</p>
+<img src="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220128/添加应用.53qc30plbxo0.webp" srcset="/img/loading.gif" lazyload alt="创建xdd-plus应用提供client id，client secret" style="zoom:50%;" />
+
+
+
+<blockquote>
+<p><strong>相关资源</strong></p>
+</blockquote>
+<p>拉取facke2命令</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">ql repo https:<span class="hljs-regexp">//gi</span>thub.com.cnpmjs.org<span class="hljs-regexp">/shufflewzc/</span>faker2.git <span class="hljs-string">&quot;jd_|jx_|gua_|jddj_|getJDCookie&quot;</span> <span class="hljs-string">&quot;activity|backUp&quot;</span> <span class="hljs-string">&quot;^jd[^_]|USER|function|utils|sendNotify|ZooFaker_Necklace.js|JDJRValidator_|sign_graphics_validate|ql|JDSignValidator&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>一键安装所有依赖（基于Faker一键脚本安装的青龙）</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker exec -it qinglong bash<br><br>curl -fsSL https:<span class="hljs-regexp">//g</span>hproxy.com<span class="hljs-regexp">/https:/</span><span class="hljs-regexp">/raw.githubusercontent.com/</span>shufflewzc<span class="hljs-regexp">/QLDependency/m</span>ain<span class="hljs-regexp">/Shell/</span>QLOneKeyDependency.sh | sh<br></code></pre></td></tr></table></figure>
+
+<h2 id="三、安装xdd-plus"><a href="#三、安装xdd-plus" class="headerlink" title="三、安装xdd-plus"></a>三、安装xdd-plus</h2><h3 id="1-安装环境"><a href="#1-安装环境" class="headerlink" title="1.安装环境"></a>1.安装环境</h3><h4 id="①下载go（arm64平台）并解压，并打开文件添加go的环境变量"><a href="#①下载go（arm64平台）并解压，并打开文件添加go的环境变量" class="headerlink" title="①下载go（arm64平台）并解压，并打开文件添加go的环境变量"></a>①下载go（arm64平台）并解压，并打开文件添加go的环境变量</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># 下载go</span><br>cd <span class="hljs-regexp">/usr/</span>local &amp;&amp; wget https:<span class="hljs-regexp">//g</span>olang.google.cn<span class="hljs-regexp">/dl/g</span>o1.<span class="hljs-number">17.6</span>.linux-arm64.tar.gz -O go1.<span class="hljs-number">17.6</span>.linux-arm64.tar.gz<br><span class="hljs-comment"># 解压go</span><br>tar -xvzf go1.<span class="hljs-number">17.6</span>.linux-arm64.tar.gz<br><br><span class="hljs-comment"># vi编辑文件（也可使用winscp直接修改，比较省事）</span><br>vi <span class="hljs-regexp">/etc/</span>profile<br><span class="hljs-comment"># 添加一下代码到最后</span><br>export GO111MODULE=on<br>export GOPROXY=https:<span class="hljs-regexp">//g</span>oproxy.cn<br>export GOROOT=<span class="hljs-regexp">/usr/</span>local/go<br>export GOPATH=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/go/</span>path<br>export PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$GOROOT</span><span class="hljs-regexp">/bin:$GOPATH/</span>bin<br><span class="hljs-comment"># 执行一下刚刚添加的东西  复制粘贴</span><br>source <span class="hljs-regexp">/etc/</span>profile<br><span class="hljs-comment">#  检查一下</span><br>go env <br></code></pre></td></tr></table></figure>
+
+<h4 id="②安装GCC"><a href="#②安装GCC" class="headerlink" title="②安装GCC"></a>②安装GCC</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum -y <span class="hljs-keyword">install</span> gcc<br>yum -y <span class="hljs-keyword">install</span> gcc-c++<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-安装XDD-PLUS"><a href="#2-安装XDD-PLUS" class="headerlink" title="2.安装XDD-PLUS"></a>2.安装XDD-PLUS</h3><h4 id="①拉库"><a href="#①拉库" class="headerlink" title="①拉库"></a>①拉库</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">cd ~ &amp;&amp; git clone https:<span class="hljs-regexp">//g</span>hproxy.com<span class="hljs-regexp">/https:/</span><span class="hljs-regexp">/github.com/</span><span class="hljs-number">764763903</span>a/xdd-plus.git<br></code></pre></td></tr></table></figure>
+
+<h4 id="②编译XDD-Plus（这里会有一点点久别乱动等就好了）"><a href="#②编译XDD-Plus（这里会有一点点久别乱动等就好了）" class="headerlink" title="②编译XDD-Plus（这里会有一点点久别乱动等就好了）"></a>②编译XDD-Plus（这里会有一点点久别乱动等就好了）</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">cd</span> xdd-plus &amp;&amp; <span class="hljs-keyword">go</span> build<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里其实可以不要编译，可以直接使用别人已经编译后的xdd（arm64平台）文件，然后直接复制于xdd-plus文件加下</p>
+</blockquote>
+<p>[xdd（arm64平台）地址，使用其release中的](<a target="_blank" rel="noopener" href="https://github.com/764763903a/xdd-plus">764763903a/xdd-plus: xdd-plus (github.com)</a>)</p>
+<p>项目已做好备份</p>
+<h4 id="③赋予权限"><a href="#③赋予权限" class="headerlink" title="③赋予权限"></a>③赋予权限</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">chmod</span> <span class="hljs-number">777</span> xdd<br></code></pre></td></tr></table></figure>
+
+<h4 id="④运行，同时去编辑文件，目录为-root-xdd-plus-conf下的config-yaml"><a href="#④运行，同时去编辑文件，目录为-root-xdd-plus-conf下的config-yaml" class="headerlink" title="④运行，同时去编辑文件，目录为/root/xdd-plus/conf下的config.yaml"></a>④运行，同时去编辑文件，目录为/root/xdd-plus/conf下的config.yaml</h4><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-string">./xdd</span><br></code></pre></td></tr></table></figure>
+
+<p>config.yaml文件说明</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">mode:</span> <span class="hljs-string">parallel</span>                           <span class="hljs-comment">#模式 balance(均衡模式)、parallel(平行模式)</span><br><span class="hljs-attr">containers:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">address:</span> <span class="hljs-string">http://192.168.31.233:5700</span>  <span class="hljs-comment">#这里是你青龙面板的地址</span><br>    <span class="hljs-attr">username:</span> <span class="hljs-string">账号</span>                      <span class="hljs-comment">#登陆青龙面板的账号</span><br>    <span class="hljs-attr">password:</span> <span class="hljs-string">密码</span>                      <span class="hljs-comment">#登录青龙面板的密码</span><br>    <span class="hljs-attr">cid:</span> <span class="hljs-string">应用ID</span>                           <span class="hljs-comment">#刚刚在青龙面板获取到的Client ID</span><br>    <span class="hljs-attr">secret:</span> <span class="hljs-string">应用key</span>                        <span class="hljs-comment">#刚刚在青龙面板获取到的Client Secret</span><br>    <span class="hljs-attr">weigth:</span> <span class="hljs-number">1</span>                              <span class="hljs-comment">#权重 balance模式下权重越高分得的ck越多，默认1</span><br>    <span class="hljs-attr">mode:</span> <span class="hljs-string">parallel</span>                       <span class="hljs-comment">#模式 balance(均衡模式)、parallel(平行模式)</span><br>    <span class="hljs-attr">limit:</span> <span class="hljs-number">9999</span>                          <span class="hljs-comment">#限制容器ck数目</span><br><span class="hljs-attr">AtTime:</span> <span class="hljs-number">5</span> <span class="hljs-comment">#填写1-12之间的数  填错自负默认为10  10点容易出现高峰超时。</span><br><span class="hljs-attr">IsHelp:</span> <span class="hljs-literal">true</span>  <span class="hljs-comment">#填写true或者false  false</span><br><span class="hljs-attr">IsOldV4:</span> <span class="hljs-comment">#填写true或者false  false是否新版或者旧版V4</span><br><span class="hljs-attr">Wskey:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 填空默认禁用wskey转换 需要的填true</span><br><span class="hljs-attr">IsAddFriend:</span> <span class="hljs-comment">#填写true或者false  false</span><br><span class="hljs-attr">Lim:</span> <span class="hljs-comment">#填写1-N 代表限制次数</span><br><span class="hljs-attr">Tyt:</span> <span class="hljs-comment">#填写1-N 代表推一推需要的互助值，默认为8</span><br><span class="hljs-attr">Later:</span> <span class="hljs-comment">#延时防止黑IP自己设置 默认60 不怕黑的改为1即可 单位是秒</span><br><span class="hljs-attr">theme:</span> <span class="hljs-string">/root/xdd-plus/theme/admin.html</span>  <span class="hljs-comment">#plus用admin.html自定义主题，支持本地、网络路径 </span><br><span class="hljs-attr">static:</span> <span class="hljs-string">./static</span> <span class="hljs-comment">#静态文件 便于自定义二维码页面时，引入css、js等文件</span><br><span class="hljs-attr">master:</span> <span class="hljs-number">123456</span> <span class="hljs-comment">#这里写plus版的密码，并从井号开始把这一段文字全部删除</span><br><span class="hljs-attr">database:</span> <span class="hljs-string">/root/xdd-plus/.xdd.db</span> <br><span class="hljs-attr">qywx_key:</span> <span class="hljs-comment">#企业微信推送key</span><br><span class="hljs-attr">daily_push:</span> <span class="hljs-comment">#定时任务</span><br><span class="hljs-attr">resident:</span> <span class="hljs-comment">#均衡模式下所有容器共同的账号pin，有多个用&#x27;&amp;&#x27;拼接。不建议填写。</span><br><span class="hljs-attr">user_agent:</span><br><span class="hljs-attr">telegram_bot_token:</span><br><span class="hljs-attr">telegram_user_id:</span><br><span class="hljs-attr">TGURL:</span> <span class="hljs-comment">#填写TG代理地址参考https://www.kejiwanjia.com/server/5221.html#3worker</span><br><span class="hljs-attr">qquid:</span> <span class="hljs-string">管理员QQ</span> <span class="hljs-comment">#接收通知的qq号，管理员QQ号码</span><br><span class="hljs-attr">qqgid:</span> <span class="hljs-string">QQ群号</span> <span class="hljs-comment">#监听的群</span><br><span class="hljs-attr">qbot_public_mode:</span> <span class="hljs-literal">true</span> <span class="hljs-comment">#qq机器人群聊模式，默认私聊模式</span><br><span class="hljs-attr">default_priority:</span> <span class="hljs-comment">#新用户默认优先级</span><br><span class="hljs-attr">no_ghproxy:</span> <span class="hljs-literal">true</span> <span class="hljs-comment">#更新资源是否不使用代理</span><br><span class="hljs-attr">daily_asset_push_cron:</span> <span class="hljs-number">58</span> <span class="hljs-number">1</span> <span class="hljs-string">*</span> <span class="hljs-string">*</span> <span class="hljs-string">*</span> <span class="hljs-comment">#日常资产推送时间 可以不填</span><br><span class="hljs-attr">repos:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">git:</span> <span class="hljs-string">https://github.com/shufflewzc/faker2.git</span><br></code></pre></td></tr></table></figure>
+
+<p>config.yaml模板</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">mode:</span> <span class="hljs-string">parallel</span><br><span class="hljs-attr">containers:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">address:</span> <span class="hljs-string">http://192.168.1.7:5700</span><br>    <span class="hljs-attr">username:</span> <span class="hljs-string">passenger</span><br>    <span class="hljs-attr">password:</span> <span class="hljs-number">710157</span><br>    <span class="hljs-attr">cid:</span> <span class="hljs-string">xxxxxx</span><br>    <span class="hljs-attr">secret:</span> <span class="hljs-string">xxxxxxx</span><br>    <span class="hljs-attr">weigth:</span> <span class="hljs-number">10</span> <br>    <span class="hljs-attr">mode:</span> <span class="hljs-string">parallel</span><br>    <span class="hljs-attr">limit:</span> <span class="hljs-number">15</span><br><span class="hljs-attr">AtTime:</span> <span class="hljs-number">5</span>  <span class="hljs-comment">#填写1-12之间的数  填错自负默认为10  10点容易出现高峰超时。</span><br><span class="hljs-attr">IsHelp:</span> <span class="hljs-literal">true</span>  <span class="hljs-comment">#填写true或者false  false</span><br><span class="hljs-attr">IsOldV4:</span>  <span class="hljs-comment">#填写true或者false  false是否新版或者旧版V4</span><br><span class="hljs-attr">Wskey:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 填空默认禁用wskey转换 需要的填true</span><br><span class="hljs-attr">IsAddFriend:</span> <span class="hljs-literal">true</span> <span class="hljs-comment">#填写true或者false  false</span><br><span class="hljs-attr">Lim:</span> <span class="hljs-number">15</span> <span class="hljs-comment">#填写1-N 代表限制次数</span><br><span class="hljs-attr">Tyt:</span> <span class="hljs-number">15</span> <span class="hljs-comment">#填写1-N 代表推一推需要的互助值，默认为8</span><br><span class="hljs-attr">Later:</span>  <span class="hljs-comment">#延时防止黑IP自己设置 默认60 不怕黑的改为1即可 单位是秒</span><br><span class="hljs-attr">ApiToken:</span> <span class="hljs-comment">#短信接入token参数</span><br><span class="hljs-attr">theme:</span> <span class="hljs-string">/root/xdd-plus/theme/admin.html</span><br><span class="hljs-attr">static:</span> <span class="hljs-string">./static</span><br><span class="hljs-attr">master:</span> <span class="hljs-string">xxxxxx</span><br><span class="hljs-attr">database:</span> <span class="hljs-string">/root/xdd-plus/.xdd.db</span> <br><span class="hljs-attr">qywx_key:</span><br><span class="hljs-attr">daily_push:</span><br><span class="hljs-attr">resident:</span><br><span class="hljs-attr">user_agent:</span><br><span class="hljs-attr">telegram_bot_token:</span><br><span class="hljs-attr">telegram_user_id:</span><br><span class="hljs-attr">TGURL:</span> <span class="hljs-comment">#填写TG代理地址参考https://www.kejiwanjia.com/server/5221.html#3worker</span><br><span class="hljs-attr">qquid:</span> <span class="hljs-string">xxxxxx</span>  <span class="hljs-comment"># 管理员qq</span><br><span class="hljs-attr">qqgid:</span> <span class="hljs-string">xxxxxx</span>  <span class="hljs-comment"># 监听群</span><br><span class="hljs-attr">qbot_public_mode:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">default_priority:</span><br><span class="hljs-attr">no_ghproxy:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">daily_asset_push_cron:</span><br><span class="hljs-attr">repos:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">git:</span> <span class="hljs-string">https://github.com/shufflewzc/faker2.git</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">path:</span> <span class="hljs-string">https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_all_bean_change.js</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="⑤此时会生成一个config-yml文件在xdd-plus的文件下，直接使用模板替换内容，并将其移动到xdd-plus-qbot文件夹内"><a href="#⑤此时会生成一个config-yml文件在xdd-plus的文件下，直接使用模板替换内容，并将其移动到xdd-plus-qbot文件夹内" class="headerlink" title="⑤此时会生成一个config.yml文件在xdd-plus的文件下，直接使用模板替换内容，并将其移动到xdd-plus/qbot文件夹内"></a>⑤此时会生成一个config.yml文件在xdd-plus的文件下，直接使用模板替换内容，并将其移动到xdd-plus/qbot文件夹内</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># go-cqhttp 默认配置文件</span><br> <br><span class="hljs-attr">account:</span> <span class="hljs-comment"># 账号相关</span><br>  <span class="hljs-attr">uin:</span> <span class="hljs-string">xxxx</span>  <span class="hljs-comment"># QQ机器人账号</span><br>  <span class="hljs-attr">password:</span> <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment"># 密码为空时使用扫码登录</span><br>  <span class="hljs-attr">encrypt:</span> <span class="hljs-literal">false</span>  <span class="hljs-comment"># 是否开启密码加密</span><br>  <span class="hljs-attr">status:</span> <span class="hljs-number">0</span>      <span class="hljs-comment"># 在线状态 请参考 https://docs.go-cqhttp.org/guide/config.html#在线状态</span><br>  <span class="hljs-attr">relogin:</span> <span class="hljs-comment"># 重连设置</span><br>    <span class="hljs-attr">delay:</span> <span class="hljs-number">3</span>   <span class="hljs-comment"># 首次重连延迟, 单位秒</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">3</span>   <span class="hljs-comment"># 重连间隔</span><br>    <span class="hljs-attr">max-times:</span> <span class="hljs-number">0</span>  <span class="hljs-comment"># 最大重连次数, 0为无限制</span><br> <br>  <span class="hljs-comment"># 是否使用服务器下发的新地址进行重连</span><br>  <span class="hljs-comment"># 注意, 此设置可能导致在海外服务器上连接情况更差</span><br>  <span class="hljs-attr">use-sso-address:</span> <span class="hljs-literal">true</span><br> <br><span class="hljs-attr">heartbeat:</span><br>  <span class="hljs-comment"># 心跳频率, 单位秒</span><br>  <span class="hljs-comment"># -1 为关闭心跳</span><br>  <span class="hljs-attr">interval:</span> <span class="hljs-number">5</span><br> <br><span class="hljs-attr">message:</span><br>  <span class="hljs-comment"># 上报数据类型</span><br>  <span class="hljs-comment"># 可选: string,array</span><br>  <span class="hljs-attr">post-format:</span> <span class="hljs-string">string</span><br>  <span class="hljs-comment"># 是否忽略无效的CQ码, 如果为假将原样发送</span><br>  <span class="hljs-attr">ignore-invalid-cqcode:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-comment"># 是否强制分片发送消息</span><br>  <span class="hljs-comment"># 分片发送将会带来更快的速度</span><br>  <span class="hljs-comment"># 但是兼容性会有些问题</span><br>  <span class="hljs-attr">force-fragment:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-comment"># 是否将url分片发送</span><br>  <span class="hljs-attr">fix-url:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-comment"># 下载图片等请求网络代理</span><br>  <span class="hljs-attr">proxy-rewrite:</span> <span class="hljs-string">&#x27;&#x27;</span><br>  <span class="hljs-comment"># 是否上报自身消息</span><br>  <span class="hljs-attr">report-self-message:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-comment"># 移除服务端的Reply附带的At</span><br>  <span class="hljs-attr">remove-reply-at:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-comment"># 为Reply附加更多信息</span><br>  <span class="hljs-attr">extra-reply-data:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-comment"># 跳过 Mime 扫描, 忽略错误数据</span><br>  <span class="hljs-attr">skip-mime-scan:</span> <span class="hljs-literal">false</span><br> <br><span class="hljs-attr">output:</span><br>  <span class="hljs-comment"># 日志等级 trace,debug,info,warn,error</span><br>  <span class="hljs-attr">log-level:</span> <span class="hljs-string">warn</span><br>  <span class="hljs-comment"># 日志时效 单位天. 超过这个时间之前的日志将会被自动删除. 设置为 0 表示永久保留.</span><br>  <span class="hljs-attr">log-aging:</span> <span class="hljs-number">15</span><br>  <span class="hljs-comment"># 是否在每次启动时强制创建全新的文件储存日志. 为 false 的情况下将会在上次启动时创建的日志文件续写</span><br>  <span class="hljs-attr">log-force-new:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-comment"># 是否启用 DEBUG</span><br>  <span class="hljs-attr">debug:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># 开启调试模式</span><br> <br><span class="hljs-comment"># 默认中间件锚点</span><br><span class="hljs-attr">default-middlewares:</span> <span class="hljs-meta">&amp;default</span><br>  <span class="hljs-comment"># 访问密钥, 强烈推荐在公网的服务器设置</span><br>  <span class="hljs-attr">access-token:</span> <span class="hljs-string">&#x27;&#x27;</span><br>  <span class="hljs-comment"># 事件过滤器文件目录</span><br>  <span class="hljs-attr">filter:</span> <span class="hljs-string">&#x27;&#x27;</span><br>  <span class="hljs-comment"># API限速设置</span><br>  <span class="hljs-comment"># 该设置为全局生效</span><br>  <span class="hljs-comment"># 原 cqhttp 虽然启用了 rate_limit 后缀, 但是基本没插件适配</span><br>  <span class="hljs-comment"># 目前该限速设置为令牌桶算法, 请参考:</span><br>  <span class="hljs-comment"># https://baike.baidu.com/item/%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95/6597000?fr=aladdin</span><br>  <span class="hljs-attr">rate-limit:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># 是否启用限速</span><br>    <span class="hljs-attr">frequency:</span> <span class="hljs-number">1</span>  <span class="hljs-comment"># 令牌回复频率, 单位秒</span><br>    <span class="hljs-attr">bucket:</span> <span class="hljs-number">1</span>     <span class="hljs-comment"># 令牌桶大小</span><br> <br><span class="hljs-attr">database:</span> <span class="hljs-comment"># 数据库相关设置</span><br>  <span class="hljs-attr">leveldb:</span><br>    <span class="hljs-comment"># 是否启用内置leveldb数据库</span><br>    <span class="hljs-comment"># 启用将会增加10-20MB的内存占用和一定的磁盘空间</span><br>    <span class="hljs-comment"># 关闭将无法使用 撤回 回复 get_msg 等上下文相关功能</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br> <br><span class="hljs-comment"># 连接服务列表</span><br><span class="hljs-comment"># 连接服务列表</span><br><span class="hljs-attr">servers:</span><br>  <span class="hljs-comment"># 添加方式，同一连接方式可添加多个，具体配置说明请查看文档</span><br>  <span class="hljs-comment">#- http: # http 通信</span><br>  <span class="hljs-comment">#- ws:   # 正向 Websocket</span><br>  <span class="hljs-comment">#- ws-reverse: # 反向 Websocket</span><br>  <span class="hljs-comment">#- pprof: #性能分析服务器</span><br>  <span class="hljs-comment"># 正向WS设置</span><br>  <span class="hljs-comment">#  - ws:</span><br>  <span class="hljs-comment">#      # 正向WS服务器监听地址</span><br>  <span class="hljs-comment">#      host: 127.0.0.1</span><br>  <span class="hljs-comment">#      # 正向WS服务器监听端口</span><br>  <span class="hljs-comment">#      port: 6700</span><br>  <span class="hljs-comment">#      middlewares:</span><br>  <span class="hljs-comment">#        &lt;&lt;: *default # 引用默认中间件</span><br>  <span class="hljs-comment"># 反向WS设置</span><br><span class="hljs-comment">#  - ws-reverse:</span><br><span class="hljs-comment">#      # 反向WS Universal 地址</span><br><span class="hljs-comment">#      # 注意 设置了此项地址后下面两项将会被忽略</span><br><span class="hljs-comment">#      universal: ws://127.0.0.1:8765/ws</span><br><span class="hljs-comment">#      # 反向WS API 地址</span><br><span class="hljs-comment">#      api: ws://127.0.0.1:8765/api</span><br><span class="hljs-comment">#      # 反向WS Event 地址</span><br><span class="hljs-comment">#      event: ws://127.0.0.1:8765/event</span><br><span class="hljs-comment">#      # 重连间隔 单位毫秒</span><br><span class="hljs-comment">#      reconnect-interval: 3000</span><br><span class="hljs-comment">#      middlewares:</span><br><span class="hljs-comment">#        &lt;&lt;: *default # 引用默认中间件</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="⑥结束xdd的运行，键盘按ctrl-c，并重新启动xdd，之后会弹出二维码，用机器人qq登录，登录成功后，ctrl-c一下，并并输入后台运行命令"><a href="#⑥结束xdd的运行，键盘按ctrl-c，并重新启动xdd，之后会弹出二维码，用机器人qq登录，登录成功后，ctrl-c一下，并并输入后台运行命令" class="headerlink" title="⑥结束xdd的运行，键盘按ctrl+c，并重新启动xdd，之后会弹出二维码，用机器人qq登录，登录成功后，ctrl+c一下，并并输入后台运行命令"></a>⑥结束xdd的运行，键盘按ctrl+c，并重新启动xdd，之后会弹出二维码，用机器人qq登录，登录成功后，ctrl+c一下，并并输入后台运行命令</h4><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-comment"># 重新启动xdd</span><br><span class="hljs-string">./xdd</span><br><span class="hljs-comment"># 后台运行</span><br><span class="hljs-string">./xdd</span> -d<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-补充内容"><a href="#3-补充内容" class="headerlink" title="3.补充内容"></a>3.补充内容</h3><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">QQ</span>命令<br>普通用户支持 发送<span class="hljs-string">Cookie</span>(支持<span class="hljs-string">ptkey</span>和<span class="hljs-string">wskey</span> 可以有直接复制抓取的长串<span class="hljs-string">Cookie</span>发送机器人自动提取)｜查询 | 签到 |祈祷 | 许愿 <span class="hljs-string">xxx</span> |许愿币 |翻翻乐<br>管理员支持 发送<span class="hljs-string">Cookie</span>(同上)｜查询 ｜查询 <span class="hljs-string">1</span> ｜查询 <span class="hljs-string">1</span> <span class="hljs-string">2</span> <span class="hljs-string">3</span> ｜查询<span class="hljs-string">1-10</span> ｜查询 京东昵称或用户名 ｜更新 ｜重启 ｜状态 | <span class="hljs-string">run</span> <span class="hljs-string">xxx</span>.<span class="hljs-string">js</span> | 助力 <span class="hljs-string">XXX</span> | 屏蔽 <span class="hljs-string">xxx</span><br>| 翻翻乐 | 删除 <span class="hljs-string">XXX</span> ｜更新账号 <span class="hljs-string">XXX</span> ｜<span class="hljs-built_in">set-env</span> 变量名 例如 <span class="hljs-built_in">set-env</span> <span class="hljs-string">guaopencard_All</span>=“<span class="hljs-string">true</span>” ｜ 通知 某某某 <span class="hljs-string">xxxxx</span><br><br><span class="hljs-string">xdd</span>重置机器人教程<br><br><span class="hljs-string">1</span>.删除<span class="hljs-string">root</span>/<span class="hljs-string">xdd-plus</span>/<span class="hljs-string">session</span>.<span class="hljs-string">token</span>文件<br><br><span class="hljs-string">rm</span> -<span class="hljs-string">f</span> /<span class="hljs-string">root</span>/<span class="hljs-string">xdd-plus</span>/<span class="hljs-string">session</span>.<span class="hljs-string">token</span><br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1/">软路由</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/">软路由</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Openwrt/">Openwrt</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/19/N1%E7%9B%B8%E5%85%B3%E7%8E%A9%E6%B3%95/">
+                        <span class="hidden-mobile">N1相关玩法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://bolg-comment-4gomau1da-passengerya.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <i class="iconfont icon-user"></i> <a href="passengerya.github.io" target="_blank" rel="nofollow noopener"><span>Passenger Blog</span></a>
+
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/scripts/injector.js"></script>
+<script src="/js/backgroundize.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script>
+  <link defer rel="stylesheet" href="/styles/backgroundize.css" />
+  <!-- hexo injector body_end end --></body>
+</html>
