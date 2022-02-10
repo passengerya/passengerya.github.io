@@ -25,10 +25,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220128/添加应用.53qc30plbxo0.webp">
 <meta property="article:published_time" content="2022-01-28T08:31:19.000Z">
-<meta property="article:modified_time" content="2022-01-28T11:55:32.612Z">
+<meta property="article:modified_time" content="2022-02-10T04:20:01.901Z">
 <meta property="article:author" content="passenger">
-<meta property="article:tag" content="软路由">
-<meta property="article:tag" content="Openwrt">
+<meta property="article:tag" content="JD">
+<meta property="article:tag" content="armbian">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220128/添加应用.53qc30plbxo0.webp">
   
@@ -207,7 +207,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.2k 字
+      7.3k 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22 分钟
+      23 分钟
     </span>
   
 
@@ -249,7 +249,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年1月28日 晚上
+                  本文最后更新于：2022年2月10日 中午
                 
               </p>
             
@@ -279,7 +279,7 @@
 <h2 id="三、拉取青龙面板"><a href="#三、拉取青龙面板" class="headerlink" title="三、拉取青龙面板"></a>三、拉取青龙面板</h2><h3 id="①拉取青龙镜像"><a href="#①拉取青龙镜像" class="headerlink" title="①拉取青龙镜像"></a>①拉取青龙镜像</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">docker</span> pull whyour/qinglong:latest<br></code></pre></td></tr></table></figure>
 
 <p>②等待下载完成之后，输入一下代码，创建容器，直接全部复制，终端粘贴</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run -dit \<br>  --name ql \<br>  --hostname ql \<br>  --restart always \<br>  -p <span class="hljs-number">5700</span>:<span class="hljs-number">5700</span> \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>config:<span class="hljs-regexp">/ql/</span>config \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>log:<span class="hljs-regexp">/ql/</span>log \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>db:<span class="hljs-regexp">/ql/</span>db \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>scripts:<span class="hljs-regexp">/ql/</span>scripts \<br>  -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>jbot:<span class="hljs-regexp">/ql/</span>jbot \<br>  whyour/qinglong:latest<br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run -dit \<br>   -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>config:<span class="hljs-regexp">/ql/</span>config \<br>   -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>db:<span class="hljs-regexp">/ql/</span>db \<br>   -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>repo:<span class="hljs-regexp">/ql/</span>repo \<br>   -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>raw:<span class="hljs-regexp">/ql/</span>raw \<br>   -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>scripts:<span class="hljs-regexp">/ql/</span>scripts \<br>   -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>log:<span class="hljs-regexp">/ql/</span>log \<br>   -v <span class="hljs-variable">$PWD</span><span class="hljs-regexp">/ql/</span>jbot:<span class="hljs-regexp">/ql/</span>jbot \<br>   --net host \<br>   --name qinglong \<br>   --hostname qinglong \<br>   --restart always \<br>   whyour/qinglong:latest<br></code></pre></td></tr></table></figure>
 
 <p>开放的端口为：ip：5700 </p>
 <h3 id="③为后面xdd提供应用的值client-id，client-secret，所以创建应用"><a href="#③为后面xdd提供应用的值client-id，client-secret，所以创建应用" class="headerlink" title="③为后面xdd提供应用的值client id，client secret，所以创建应用"></a>③为后面xdd提供应用的值client id，client secret，所以创建应用</h3><img src="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220128/添加应用.53qc30plbxo0.webp" srcset="/img/loading.gif" lazyload alt="创建xdd-plus应用提供client id，client secret" style="zoom:50%;" />
@@ -334,7 +334,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1/">软路由</a>
+                      <a class="hover-with-bg" href="/categories/N1/">N1</a>
                     
                   </div>
                 
@@ -342,9 +342,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/">软路由</a>
+                      <a class="hover-with-bg" href="/tags/JD/">JD</a>
                     
-                      <a class="hover-with-bg" href="/tags/Openwrt/">Openwrt</a>
+                      <a class="hover-with-bg" href="/tags/armbian/">armbian</a>
                     
                   </div>
                 
