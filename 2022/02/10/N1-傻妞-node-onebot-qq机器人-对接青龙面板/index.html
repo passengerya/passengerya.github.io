@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220213/pm1.3g40mfs9by60.webp">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220210/Snipaste_2022-02-10_12-02-01.5o59r7ulqe40.webp">
 <meta property="article:published_time" content="2022-02-10T02:18:47.000Z">
-<meta property="article:modified_time" content="2022-02-16T07:58:10.450Z">
+<meta property="article:modified_time" content="2022-02-21T09:12:52.398Z">
 <meta property="article:author" content="passenger">
 <meta property="article:tag" content="JD">
 <meta property="article:tag" content="armbian">
@@ -222,7 +222,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      10k 字
+      11k 字
     </span>
   
 
@@ -231,7 +231,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      32 分钟
+      35 分钟
     </span>
   
 
@@ -264,7 +264,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年2月16日 下午
+                  本文最后更新于：2022年2月21日 下午
                 
               </p>
             
@@ -359,6 +359,20 @@
 
 <p>启动正常后，输入命令使傻妞后台静默运行</p>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-string">./sillyGirl</span> -d<br></code></pre></td></tr></table></figure>
+
+<h3 id="④systemd守护傻妞"><a href="#④systemd守护傻妞" class="headerlink" title="④systemd守护傻妞"></a>④systemd守护傻妞</h3><p>新建傻妞系统服务文件</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">vim <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/systemd/</span>system/sillyGirl.service <br></code></pre></td></tr></table></figure>
+
+<p>按键盘字母 i 进入编辑模式，复制下面👇的内容，然后按键盘 esc 退出编辑模式，再输入命令 <code>:wq</code> 保存并退出<span style="border-bottom:2px dashed red;">（注意这里是安装在etc目录下的傻妞）</span></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=silly silly girl bot<br><span class="hljs-attr">After</span>=network.target mysql.service mariadb.service mysqld.service<br><br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">Type</span>=forking<br><span class="hljs-attr">ExecStart</span>=/root/sillyGirl/sillyGirl -d<br><span class="hljs-attr">PIDFile</span>=/var/run/sillyGirl.pid<br><span class="hljs-attr">Restart</span>=always<br><span class="hljs-attr">User</span>=root<br><span class="hljs-attr">Group</span>=root<br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br><span class="hljs-attr">Alias</span>=sillyGirl.service<br></code></pre></td></tr></table></figure>
+
+<p>然后分别输入下面的命令激活</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">systemctl daemon-reload <span class="hljs-comment">#重新加载所有被修改过的服务配置，否则配置不会生效</span><br>systemctl enable sillyGirl.service <span class="hljs-comment">#设置为开机自启</span><br>systemctl <span class="hljs-literal">start</span> sillyGirl.service <span class="hljs-comment">#启动服务</span><br><span class="hljs-comment"># 其他常用的管理命令</span><br>systemctl restart sillyGirl.service <span class="hljs-comment">#重启服务</span><br>systemctl <span class="hljs-literal">stop</span> sillyGirl.service <span class="hljs-comment">#停止服务</span><br>systemctl status sillyGirl.service <span class="hljs-comment">#查看运行状态</span><br></code></pre></td></tr></table></figure>
+
+<p>如果你使用了systemd方式守护傻妞，再通过 <strong>./sillyGirl -t</strong> 方式启动傻妞，会提示已杀死进程。你需要先停止系统进程，再重新进入傻妞终端交互</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">systemctl stop sillyGirl.service <span class="hljs-comment">#停止傻妞系统服务</span><br><span class="hljs-keyword">cd</span> sillyGirl <span class="hljs-comment">#cd到傻妞目录</span><br><span class="hljs-string">./sillyGirl</span> -t <span class="hljs-comment">#终端交互启动傻妞</span><br></code></pre></td></tr></table></figure>
+
+
 
 <h2 id="三、对接青龙面板"><a href="#三、对接青龙面板" class="headerlink" title="三、对接青龙面板"></a>三、对接青龙面板</h2><img src="https://cdn.jsdelivr.net/gh/passengerya/blogimage-hosting@master/20220210/Snipaste_2022-02-10_12-02-01.5o59r7ulqe40.webp" srcset="/img/loading.gif" lazyload alt="对接青龙面板" style="zoom:50%;" />
 
